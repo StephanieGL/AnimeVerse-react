@@ -1,0 +1,26 @@
+/* Top Anime Section */
+.section-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700;
+    border-bottom: 2px solid #ef4444; /* border-red-500 */
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    color: #fff;
+}
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+/* Responsive Grid */
+@media (min-width: 640px) {
+    .anime-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 768px) {
+    .anime-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (min-width: 1024px) {
+    .anime-grid { grid-template-columns: repeat(5, 1fr); }
+}

@@ -1,0 +1,152 @@
+.details-page-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    color: #fff;
+}
+
+/* Styles for the new back button */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    color: #d1d5db;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.back-button:hover {
+    color: #f87171;
+    background-color: rgba(248, 113, 113, 0.1);
+}
+
+
+.loading-text, .error-text {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 4rem 0;
+}
+
+.details-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.details-image {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.details-info {
+    flex: 1;
+}
+
+.details-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+}
+
+.details-title-japanese {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    margin: 0 0 1.5rem 0;
+    font-weight: 400;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #1f2937;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
+
+.info-icon {
+    color: #f87171;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #d1d5db;
+}
+
+.info-value {
+    color: #fff;
+}
+
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.genre-tag {
+    background-color: #ef4444;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.details-body {
+    background-color: #1f2937;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.details-body h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #ef4444;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.synopsis {
+    line-height: 1.6;
+    color: #d1d5db;
+}
+
+.recommendations-section h3 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .details-header {
+        flex-direction: column;
+    }
+    .details-image {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    .details-title {
+        font-size: 2rem;
+    }
+}

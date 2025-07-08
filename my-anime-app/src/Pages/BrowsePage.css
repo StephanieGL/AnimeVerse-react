@@ -1,0 +1,35 @@
+.browse-page-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+/* Container for the load more button */
+.load-more-container {
+    text-align: center;
+    margin-top: 2rem;
+    padding-bottom: 2rem; /* Add some space at the bottom */
+}
+
+/* Styling for the load more button */
+.load-more-button {
+    background-color: #ef4444; /* bg-red-500 */
+    color: white;
+    border: none;
+    border-radius: 9999px; /* rounded-full */
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.load-more-button:hover {
+    background-color: #dc2626; /* hover:bg-red-600 */
+}
+
+.load-more-button:disabled {
+    background-color: #9ca3af; /* gray-400 */
+    cursor: not-allowed;
+}
