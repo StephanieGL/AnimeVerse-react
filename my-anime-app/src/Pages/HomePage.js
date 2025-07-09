@@ -50,7 +50,7 @@ const HomePage = ({ onSearch, onCardClick }) => {
                 loading={loading} 
                 error={error} 
                 animeList={topAnime} 
-                title="Top Airing Anime"
+                title="Top Anime of the Season"
                 onCardClick={onCardClick}
             />
         </div>
