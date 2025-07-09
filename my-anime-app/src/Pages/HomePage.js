@@ -12,10 +12,12 @@ const HomePage = ({ onSearch, onCardClick }) => {
     useEffect(() => {
         const fetchTopAnime = async () => {
             try {
-                const response = await fetch('https://api.jikan.moe/v4/top/anime?type=tv&filter=airing&limit=10');
+                // sfw=true to the endpoint to filter out adult content
+                const response = await fetch('https://api.jikan.moe/v4/top/anime?type=tv&filter=airing&limit=10&sfw=true');
                 if (!response.ok) throw new Error('Failed to fetch top anime');
                 const data = await response.json();
 
+                // This logic removes any duplicates from the API response.
                 const uniqueAnime = Array.from(new Map(data.data.map(anime => [anime.mal_id, anime])).values());
                 
                 setTopAnime(uniqueAnime);
@@ -48,7 +50,7 @@ const HomePage = ({ onSearch, onCardClick }) => {
                 loading={loading} 
                 error={error} 
                 animeList={topAnime} 
-                title="Top Animes of the Season"
+                title="Top Airing Anime"
                 onCardClick={onCardClick}
             />
         </div>

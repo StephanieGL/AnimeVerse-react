@@ -13,36 +13,31 @@ const BrowsePage = ({ initialQuery, onCardClick }) => {
     const [currentPage, setCurrentPage] = useState(1); // Tracks the page number for the API
     const [hasNextPage, setHasNextPage] = useState(true); // Tracks if the API has more pages
 
-    // This effect debounces the search input. It waits 500ms after the user stops
-    // typing before updating the debouncedQuery, which triggers the API call.
     useEffect(() => {
         const handler = setTimeout(() => {
             setDebouncedQuery(query);
         }, 500);
-        // Cleanup function to reset the timer if the user types again
         return () => clearTimeout(handler);
     }, [query]);
 
-    // This is the main data fetching function. It's now smart enough to handle
-    // both browsing and searching, and loading more pages for either.
     const fetchAnime = useCallback(async (page, isLoadMore = false) => {
         if (!isLoadMore) {
-            setInitialLoading(true); // Show main spinner for a new search/browse
+            setInitialLoading(true);
         } else {
-            setLoading(true); // Show button spinner for "Load More"
+            setLoading(true);
         }
         setError(null);
 
+        // sfw=true to the endpoint to filter out adult content
         const endpoint = debouncedQuery
-            ? `https://api.jikan.moe/v4/anime?q=${debouncedQuery}&page=${page}&limit=25`
-            : `https://api.jikan.moe/v4/anime?page=${page}&limit=25&order_by=popularity`;
+            ? `https://api.jikan.moe/v4/anime?q=${debouncedQuery}&page=${page}&limit=25&sfw=true`
+            : `https://api.jikan.moe/v4/anime?page=${page}&limit=25&order_by=popularity&sfw=true`;
 
         try {
             const response = await fetch(endpoint);
             if (!response.ok) throw new Error('Failed to fetch anime list. The API may be busy.');
             const data = await response.json();
 
-            // If loading more, add to the list. Otherwise, replace the list.
             if (isLoadMore) {
                 setAllAnime(prev => [...prev, ...data.data]);
             } else {
@@ -58,15 +53,12 @@ const BrowsePage = ({ initialQuery, onCardClick }) => {
             setInitialLoading(false);
             setLoading(false);
         }
-    }, [debouncedQuery]); // This function rebuilds if the debounced query changes
+    }, [debouncedQuery]);
 
-    // This effect triggers a new search whenever the debounced query changes.
     useEffect(() => {
-        // When a new search is triggered, always start from page 1.
         fetchAnime(1, false);
     }, [debouncedQuery, fetchAnime]);
 
-    // Handles the "Load More" button click
     const handleLoadMore = () => {
         if (hasNextPage && !loading) {
             fetchAnime(currentPage + 1, true);
