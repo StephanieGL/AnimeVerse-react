@@ -1,6 +1,6 @@
 /* Search Section */
 .search-section {
-    max-width: 42rem; /* max-w-2xl */
+    max-width: 42rem; 
     margin: 0 auto 4rem;
 }
 
@@ -9,7 +9,7 @@
 }
 /* Search Section */
 .search-section {
-    max-width: 42rem; /* max-w-2xl */
+    max-width: 42rem;
     margin: 0 auto 4rem;
 }
 
@@ -19,22 +19,22 @@
 
 .search-input {
     width: 100%;
-    background-color: #1f2937; /* bg-gray-800 */
+    background-color: #1f2937; 
     color: #ffffff;
     border: 2px solid transparent;
-    border-radius: 9999px; /* rounded-full */
-    padding: 1rem 4rem 1rem 1.5rem; /* py-4 px-6 pr-16 */
-    font-size: 1.125rem; /* text-lg */
+    border-radius: 9999px; 
+    padding: 1rem 4rem 1rem 1.5rem; 
+    font-size: 1.125rem; 
     outline: none;
     transition: border-color 0.3s;
 }
 
 .search-input::placeholder {
-    color: #9ca3af; /* placeholder-gray-400 */
+    color: #9ca3af;
 }
 
 .search-input:focus {
-    border-color: #f87171; /* focus:border-red-400 */
+    border-color: #f87171;
 }
 
 .search-button {
@@ -42,32 +42,30 @@
     right: 0.5rem;
     top: 50%;
     transform: translateY(-50%);
-    background-color: #ef4444; /* bg-red-500 */
+    background-color: #ef4444;
     border: none;
     border-radius: 50%;
-    padding: 0.75rem; /* p-3 */
+    padding: 0.75rem;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 .search-button:hover {
-    background-color: #dc2626; /* hover:bg-red-600 */
+    background-color: #dc2626;
 }
 
-/* Styles for the explore link wrapper */
 .explore-link-wrapper {
     text-align: center;
     margin-top: 1rem;
 }
 
-/* New styles for the explore button to make it look like a link */
 .explore-link-button {
     background: none;
     border: none;
     padding: 0;
     font: inherit;
     cursor: pointer;
-    color: #d1d5db; /* text-gray-300 */
+    color: #d1d5db;
     font-size: 0.9rem;
     text-decoration: none;
     border-bottom: 1px solid transparent;
@@ -75,6 +73,6 @@
 }
 
 .explore-link-button:hover {
-    color: #f87171; /* red-400 */
+    color: #f87171;
     border-bottom-color: #f87171;
 }

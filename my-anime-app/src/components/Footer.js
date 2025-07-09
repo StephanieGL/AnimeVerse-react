@@ -2,7 +2,6 @@ import React from 'react';
 import './Footer.css';
 
 const Footer = () => {
-    // A list of sample categories. This could be fetched from an API later.
     const categories = ['Action', 'Adventure', 'Comedy', 'Drama', 'Fantasy', 'Sci-Fi', 'Slice of Life'];
 
     return (
