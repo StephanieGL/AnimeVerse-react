@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Star, Menu, X } from 'lucide-react'; // Import Menu and X icons
-import './Navbar.css';
+import { Star, Menu, X } from 'lucide-react'; 
+import './NavBar.css';
 
 const Navbar = ({ navigate }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
